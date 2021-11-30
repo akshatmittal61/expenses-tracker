@@ -1,6 +1,7 @@
-import React from 'react'
-import Button from './Button'
-import favicon from '../images/favicon.svg'
+import React from 'react';
+import Button from './Button';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import favicon from '../images/favicon.svg';
 
 const SideBar = () => {
     return (
@@ -16,28 +17,36 @@ const SideBar = () => {
                     <nav className="aside-nav">
                         <ul className="aside-nav-ul">
                             <li className="aside-nav-li">
-                                <span className="aside-nav-li__icon">
-                                    <span className="material-icons">home</span>
-                                </span>
-                                <span className="aside-nav-li__text">Home</span>
+                                <Link to='/'>
+                                    <span className="aside-nav-li__icon">
+                                        <span className="material-icons">home</span>
+                                    </span>
+                                    <span className="aside-nav-li__text">Home</span>
+                                </Link>
                             </li>
                             <li className="aside-nav-li">
-                                <span className="aside-nav-li__icon">
-                                    <span className="material-icons">history</span>
-                                </span>
-                                <span className="aside-nav-li__text">History</span>
+                                <Link to='/history'>
+                                    <span className="aside-nav-li__icon">
+                                        <span className="material-icons">history</span>
+                                    </span>
+                                    <span className="aside-nav-li__text">History</span>
+                                </Link>
                             </li>
                             <li className="aside-nav-li">
-                                <span className="aside-nav-li__icon">
-                                    <span className="material-icons">savings</span>
-                                </span>
-                                <span className="aside-nav-li__text">Savings</span>
+                                <Link to='/savings'>
+                                    <span className="aside-nav-li__icon">
+                                        <span className="material-icons">savings</span>
+                                    </span>
+                                    <span className="aside-nav-li__text">Savings</span>
+                                </Link>
                             </li>
                             <li className="aside-nav-li">
-                                <span className="aside-nav-li__icon">
-                                    <span className="material-icons">payments</span>
-                                </span>
-                                <span className="aside-nav-li__text">Expenses</span>
+                                <Link to='/expenses'>
+                                    <span className="aside-nav-li__icon">
+                                        <span className="material-icons">payments</span>
+                                    </span>
+                                    <span className="aside-nav-li__text">Expenses</span>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
