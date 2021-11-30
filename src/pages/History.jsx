@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react'
 
-const History = ({ finance }) => {
-    const [details, setDetails] = useState(finance);
+const History = ({ axiosInstance }) => {
     const [balance, setBalance] = useState(0);
+    const [transactions, setTransactions] = useState([]);
     useEffect(() => {
-        getBalance();
+        getTransactions();
     }, [])
-    function getBalance() {
-        let f = 0;
-        details.map(item => {
-            f += item.amount;
-            setBalance(f);
-        })
+    async function getTransactions() {
+        await axiosInstance.get('/')
+            .then((res) => {
+                let f = 0;
+                setTransactions([...res.data]);
+                console.log(res.data);
+                res.data.map(item => {
+                    f += item.amount;
+                    setBalance(f);
+                })
+            })
+            .catch(err => console.log(err))
     }
     return (
         <section className="history">
             <div className="history-container">
                 <div className="history-head">
                     <h1 className="history-head__h1">History</h1>
-                    <h3 className="history-head__h3" style={{ color: balance > 0 ? "var(--green)" : "var(--red)" }}>{`Total Balance: ${balance}`}</h3>
+                    <h3 className="history-head__h3" style={{ color: balance >= 0 ? "var(--green)" : "var(--red)" }}>{`Total Balance: ${balance}`}</h3>
                 </div>
                 <div className="history-details">
                     <table>
@@ -27,10 +33,13 @@ const History = ({ finance }) => {
                             <th>Amount</th>
                         </tr>
                         {
-                            details.map((item, index) => (
+                            transactions.map((item, index) => (
                                 <tr key={index}>
                                     <td>{item.title}</td>
-                                    <td style={{ color: item.amount > 0 ? "var(--green)" : "var(--red)" }}>{item.amount}</td>
+                                    <td style={{ color: item.amount >= 0 ? "var(--green)" : "var(--red)" }}>
+                                        {item.amount}
+                                        <span className="material-icons">delete</span>
+                                    </td>
                                 </tr>
                             ))
                         }

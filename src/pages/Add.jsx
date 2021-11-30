@@ -1,21 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '../components/Button';
 
-const Add = () => {
+const Add = ({ axiosInstance, length }) => {
     const [item, setItem] = useState({
         title: '',
         amount: 0
     });
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setItem({
+        /* setItem({
             ...item,
             [name]: value
+        }) */
+        if (name === "title")
+            setItem({
+                ...item,
+                [name]: value
+            })
+        else setItem({
+            ...item,
+            [name]: +value
         })
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(item);
+        let newTransaction = {
+            id: length,
+            ...item
+        }
+        console.log(newTransaction);
+        axiosInstance.post('/add', newTransaction)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err));
         setItem({
             title: '',
             amount: 0

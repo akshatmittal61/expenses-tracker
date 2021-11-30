@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import receipt from '../images/receipt.svg'
 
-const Home = ({ finance }) => {
+const Home = ({ axiosInstance }) => {
     const [balance, setBalance] = useState(0);
     useEffect(() => {
-        getBalance();
+        getTransactions();
     }, [])
-    function getBalance() {
-        let f = 0;
-        finance.map(item => {
-            f += item.amount;
-            setBalance(f);
-        })
+    async function getTransactions() {
+        await axiosInstance.get('/')
+            .then((res) => {
+                let f = 0;
+                console.log(res.data);
+                res.data.map(item => {
+                    f += item.amount;
+                    setBalance(f);
+                })
+            })
+            .catch(err => console.log(err))
     }
     return (
         <section className="home">
@@ -21,7 +26,7 @@ const Home = ({ finance }) => {
                 </div>
                 <div className="home-content">
                     <span className="home-content__head">Your Balance</span>
-                    <span className="home-content__balance" style={{ color: balance > 0 ? "var(--green)" : "var(--red)" }}>{balance > 0 ? `₹${balance}` : `- ₹${-balance}`}</span>
+                    <span className="home-content__balance" style={{ color: balance >= 0 ? "var(--green)" : "var(--red)" }}>{balance >= 0 ? `₹${balance}` : `- ₹${-balance}`}</span>
                 </div>
             </div>
         </section>

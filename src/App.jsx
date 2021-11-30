@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Fab from './components/Fab';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
@@ -11,44 +12,20 @@ import Add from './pages/Add';
 import Contact from './pages/Contact';
 
 const App = () => {
-    const [finance, setFinance] = useState([
-        {
-            title: "tution",
-            amount: 3000
-        },
-        {
-            title: "donation",
-            amount: -90
-        },
-        {
-            title: "travel",
-            amount: 100
-        },
-        {
-            title: "party",
-            amount: -50
-        },
-        {
-            title: "dress",
-            amount: -750
-        },
-        {
-            title: "hackathon",
-            amount: 5000
-        },
-        {
-            title: "fees",
-            amount: -50000
-        },
-        {
-            title: "lottery",
-            amount: 40000
-        },
-        {
-            title: "intern",
-            amount: 7500
-        }
-    ])
+    const axiosInstance = axios.create({
+        baseURL: 'http://localhost:5000'
+    })
+    useEffect(() => {
+        getTransactions();
+    }, [])
+    const [transactions, setTransactions] = useState([]);
+    async function getTransactions() {
+        await axiosInstance.get('/')
+            .then((res) => {
+                setTransactions([...res.data]);
+            })
+            .catch(err => console.log(err))
+    }
     return (
         <Router>
             <SideBar />
@@ -56,11 +33,11 @@ const App = () => {
                 <div className="main-container">
                     <Header />
                     <Routes>
-                        <Route path='/' element={<Home finance={finance} />} />
-                        <Route path='/add' element={<Add />} />
-                        <Route path='/history' element={<History finance={finance} />} />
-                        <Route path='/savings' element={<Savings finance={finance} />} />
-                        <Route path='/expenses' element={<Expenses finance={finance} />} />
+                        <Route path='/' element={<Home axiosInstance={axiosInstance} />} />
+                        <Route path='/add' element={<Add axiosInstance={axiosInstance} length={transactions.length} />} />
+                        <Route path='/history' element={<History axiosInstance={axiosInstance} />} />
+                        <Route path='/savings' element={<Savings axiosInstance={axiosInstance} />} />
+                        <Route path='/expenses' element={<Expenses axiosInstance={axiosInstance} />} />
                         <Route path='/contact' element={<Contact />} />
                     </Routes>
                 </div>
