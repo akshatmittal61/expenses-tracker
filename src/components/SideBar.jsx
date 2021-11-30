@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import favicon from '../images/favicon.svg';
 
 const SideBar = () => {
@@ -9,10 +9,12 @@ const SideBar = () => {
             <div className="aside-container">
                 <div className="aside-top">
                     <div className="aside-top-head">
-                        <div className="aside-top-logo">
-                            <img src={favicon} alt="Expenses Tracker" className="aside-top-logo__img" />
-                        </div>
-                        <span className="aside-top-brand">Expenses Tracker</span>
+                        <Link to='/'>
+                            <div className="aside-top-logo">
+                                <img src={favicon} alt="Expenses Tracker" className="aside-top-logo__img" />
+                            </div>
+                            <span className="aside-top-brand">Expenses Tracker</span>
+                        </Link>
                     </div>
                     <nav className="aside-nav">
                         <ul className="aside-nav-ul">
@@ -52,9 +54,9 @@ const SideBar = () => {
                     </nav>
                 </div>
                 <div className="aside-bottom">
-                    <div className="contact-us">
+                    <Link to='/contact'>
                         <Button className="contact-us-btn" variant="outline" size="small" color="green" text="Contact Us" />
-                    </div>
+                    </Link>
                 </div>
             </div>
         </aside>

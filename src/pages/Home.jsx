@@ -9,7 +9,6 @@ const Home = ({ finance }) => {
     function getBalance() {
         let f = 0;
         finance.map(item => {
-            console.log(item.amount)
             f += item.amount;
             setBalance(f);
         })

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Theme from './theme';
 
 const Header = () => {
@@ -15,7 +16,9 @@ const Header = () => {
             <div className="header-container">
                 <div className="header-left">
                     <div className="header-left__home">
-                        <span className="material-icons">home</span>
+                        <Link to='/'>
+                            <span className="material-icons">home</span>
+                        </Link>
                     </div>
                     <div className="header-left__theme">
                         <Theme />
