@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Expenses Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img src="./public/images/favicon.svg" alt="Expenses Tracker" width="200" height="200" />
+</p>
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+Expenses Tracker is web application built with MERN stack technologies to track all you finance, savings and expenses.
 
-### `npm start`
+-   **Runtime used in backend** - [Node.js](https://nodejs.org/)
+-   **Frontend framework** - [React JS](https://reactjs.org/)
+-   **CSS preprocessor** - [SASS](https://sass-lang.com/)
+-   **Backend framework** - [Express](https://expressjs.com/)
 
-Runs the app in the development mode.\
+## Navigation
+
+-   **Home Page** - The Home Page of expenses tracker will display your total balance.
+
+-   **Add** - To add a new transaction click on the FAB ( + ) icon at bottom corner of the page.
+
+-   **History** - The History Page contains all the track of all you transactions.
+
+-   **Savings** - This page will show all the savings (positive transactions).
+
+-   **Expenses** - This page will show all the expenses (negative transactions).
+
+-   **Contact the developer** - To contact the developer, go to the contact us page and connect with them at different social platforms.
+
+- **Note:**  - To add an expense, use - (negative) sign before entering the amount.
+
+# Development
+
+To clone copy the following command in your terminal and start development.
+
+```sh
+git clone https://github.com/akshatmittal61/expenses-tracker.git
+```
+
+cd into the directory
+
+```sh
+cd expenses-tracker
+```
+
+Install all the dependencies
+
+```sh
+npm i
+```
+
+Run the project in development mode
+
+```sh
+npm start
+```
+
+Run the backend server in a new terminal window
+
+```sh
+npm run server
+```
+
+For backend server you would need nodemon
+
+To install nodemon locally in your system
+
+```sh
+npm i nodemon -g
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Author
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Akshat Mittal](https://akshatmittal61.github.io/portfolio)

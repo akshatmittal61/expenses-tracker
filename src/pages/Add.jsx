@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button';
 
 const Add = ({ axiosInstance, length }) => {
@@ -8,10 +8,6 @@ const Add = ({ axiosInstance, length }) => {
     });
     const handleChange = (e) => {
         const { name, value } = e.target;
-        /* setItem({
-            ...item,
-            [name]: value
-        }) */
         if (name === "title")
             setItem({
                 ...item,

@@ -55,7 +55,13 @@ const SideBar = () => {
                 </div>
                 <div className="aside-bottom">
                     <Link to='/contact'>
-                        <Button className="contact-us-btn" variant="outline" size="small" color="green" text="Contact Us" />
+                        <Button
+                            className="contact-us-btn"
+                            variant="outline"
+                            size="small"
+                            color="blue"
+                            text="Contact Us"
+                        />
                     </Link>
                 </div>
             </div>

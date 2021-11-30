@@ -19,6 +19,12 @@ const History = ({ axiosInstance }) => {
             })
             .catch(err => console.log(err))
     }
+    const deleteTransaction = (id) => {
+        axiosInstance.delete(`/delete/${id}`)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err));
+        getTransactions();
+    }
     return (
         <section className="history">
             <div className="history-container">
@@ -38,7 +44,7 @@ const History = ({ axiosInstance }) => {
                                     <td>{item.title}</td>
                                     <td style={{ color: item.amount >= 0 ? "var(--green)" : "var(--red)" }}>
                                         {item.amount}
-                                        <span className="material-icons">delete</span>
+                                        <span className="material-icons" onClick={() => deleteTransaction(index)}>delete</span>
                                     </td>
                                 </tr>
                             ))
