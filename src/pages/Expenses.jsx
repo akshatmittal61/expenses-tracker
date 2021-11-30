@@ -11,7 +11,6 @@ const Expenses = ({ axiosInstance }) => {
             .then((res) => {
                 let f = 0;
                 setTransactions([...res.data]);
-                console.log(res.data);
                 res.data.map(item => {
                     if (item.amount < 0) f += item.amount;
                     setBalance(f);

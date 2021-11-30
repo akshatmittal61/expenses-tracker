@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 import receipt from '../images/receipt.svg'
 
 const Home = ({ axiosInstance }) => {
@@ -10,7 +12,6 @@ const Home = ({ axiosInstance }) => {
         await axiosInstance.get('/')
             .then((res) => {
                 let f = 0;
-                console.log(res.data);
                 res.data.map(item => {
                     f += item.amount;
                     setBalance(f);
@@ -27,6 +28,14 @@ const Home = ({ axiosInstance }) => {
                 <div className="home-content">
                     <span className="home-content__head">Your Balance</span>
                     <span className="home-content__balance" style={{ color: balance >= 0 ? "var(--green)" : "var(--red)" }}>{balance >= 0 ? `₹${balance}` : `- ₹${-balance}`}</span>
+                    <Link to='/contact'>
+                        <Button
+                            className="contact-us-btn"
+                            variant="outline"
+                            color="blue"
+                            text="Contact Us"
+                        />
+                    </Link>
                 </div>
             </div>
         </section>

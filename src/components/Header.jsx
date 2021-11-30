@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import links from './NavLinks';
 import { Link } from 'react-router-dom';
 import Theme from './theme';
 
@@ -15,11 +16,15 @@ const Header = () => {
         <header className="header">
             <div className="header-container">
                 <div className="header-left">
-                    <div className="header-left__home">
-                        <Link to='/'>
-                            <span className="material-icons">home</span>
-                        </Link>
-                    </div>
+                    {
+                        links.map(link => (
+                            <div className={`header-left__${link.icon}`}>
+                                <Link to={link.route}>
+                                    <span className="material-icons">{link.icon}</span>
+                                </Link>
+                            </div>
+                        ))
+                    }
                     <div className="header-left__theme">
                         <Theme />
                     </div>

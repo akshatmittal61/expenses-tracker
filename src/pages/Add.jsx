@@ -1,7 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '../components/Button';
 
-const Add = ({ axiosInstance, length }) => {
+const Add = ({ axiosInstance}) => {
+    const [transactions, setTransactions] = useState([]);
+    useEffect(() => {
+        getTransactions();
+    })
+    async function getTransactions() {
+        await axiosInstance.get('/')
+            .then((res) => {
+                let f = 0;
+                setTransactions([...res.data]);
+            })
+            .catch(err => console.log(err))
+    }
     const [item, setItem] = useState({
         title: '',
         amount: 0
@@ -20,11 +32,11 @@ const Add = ({ axiosInstance, length }) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        getTransactions();
         let newTransaction = {
-            id: length,
+            id: transactions.length,
             ...item
         }
-        console.log(newTransaction);
         axiosInstance.post('/add', newTransaction)
             .then(res => console.log(res.data))
             .catch(err => console.log(err));
@@ -68,6 +80,7 @@ const Add = ({ axiosInstance, length }) => {
                         text="Add Expense"
                         color="blue"
                         type="submit"
+                        size="large"
                     />
                 </form>
             </div>

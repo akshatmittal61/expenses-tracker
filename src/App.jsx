@@ -15,17 +15,6 @@ const App = () => {
     const axiosInstance = axios.create({
         baseURL: 'http://localhost:5000'
     })
-    useEffect(() => {
-        getTransactions();
-    }, [])
-    const [transactions, setTransactions] = useState([]);
-    async function getTransactions() {
-        await axiosInstance.get('/')
-            .then((res) => {
-                setTransactions([...res.data]);
-            })
-            .catch(err => console.log(err))
-    }
     return (
         <Router>
             <SideBar />
@@ -34,7 +23,7 @@ const App = () => {
                     <Header />
                     <Routes>
                         <Route path='/' element={<Home axiosInstance={axiosInstance} />} />
-                        <Route path='/add' element={<Add axiosInstance={axiosInstance} length={transactions.length} />} />
+                        <Route path='/add' element={<Add axiosInstance={axiosInstance} />} />
                         <Route path='/history' element={<History axiosInstance={axiosInstance} />} />
                         <Route path='/savings' element={<Savings axiosInstance={axiosInstance} />} />
                         <Route path='/expenses' element={<Expenses axiosInstance={axiosInstance} />} />
