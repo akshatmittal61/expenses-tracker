@@ -18,9 +18,9 @@ fs.readFile(path.join(__dirname, "transactions.json"), "utf8", (err, data) => {
     transactions = [...JSON.parse(data)];
 })
 
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
     res.json(transactions);
-})
+}) */
 app.post('/add', (req, res) => {
     let newTransaction = req.body;
     transactions = [...transactions, newTransaction];
