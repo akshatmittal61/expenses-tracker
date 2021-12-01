@@ -13,7 +13,7 @@ import Contact from './pages/Contact';
 
 const App = () => {
     const axiosInstance = axios.create({
-        baseURL: process.env.baseURL || 'http://localhost:5000'
+        baseURL: `http://localhost:${process.env.PORT || 5000}`
     })
     return (
         <Router>
