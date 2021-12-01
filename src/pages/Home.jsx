@@ -9,7 +9,7 @@ const Home = ({ axiosInstance }) => {
         getTransactions();
     }, [])
     async function getTransactions() {
-        await axiosInstance.get('/')
+        await axiosInstance.get('/api/transactions')
             .then((res) => {
                 let f = 0;
                 res.data.map(item => {

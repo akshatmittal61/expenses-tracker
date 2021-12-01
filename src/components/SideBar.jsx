@@ -20,8 +20,8 @@ const SideBar = () => {
                     <nav className="aside-nav">
                         <ul className="aside-nav-ul">
                             {
-                                links.map(link => (
-                                    <li className="aside-nav-li">
+                                links.map((link, index) => (
+                                    <li className="aside-nav-li" key={index}>
                                         <Link to={link.route}>
                                             <span className="aside-nav-li__icon">
                                                 <span className="material-icons">{link.icon}</span>

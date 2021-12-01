@@ -62,7 +62,7 @@ const Contact = () => {
                                 <div className="row">
                                     {
                                         author.socials.map((social, index) => (
-                                            <div className="col-lg-50 col-md-100 col-sm-100">
+                                            <div className="col-lg-50 col-md-100 col-sm-100" key={index}>
                                                 <div className="contact-social">
                                                     <a className="contact-social__link" href={social.link}>
                                                         <span className="contact-social__icon">

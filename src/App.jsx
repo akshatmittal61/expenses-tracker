@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 import Fab from './components/Fab';
 import Header from './components/Header';
@@ -13,7 +13,7 @@ import Contact from './pages/Contact';
 
 const App = () => {
     const axiosInstance = axios.create({
-        baseURL: 'http://localhost:5000'
+        baseURL: process.env.baseURL || 'http://localhost:5000'
     })
     return (
         <Router>

@@ -17,8 +17,8 @@ const Header = () => {
             <div className="header-container">
                 <div className="header-left">
                     {
-                        links.map(link => (
-                            <div className={`header-left__${link.icon}`}>
+                        links.map((link, index) => (
+                            <div className={`header-left__${link.icon}`} key={index}>
                                 <Link to={link.route}>
                                     <span className="material-icons">{link.icon}</span>
                                 </Link>
