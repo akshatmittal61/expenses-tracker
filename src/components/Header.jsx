@@ -10,7 +10,7 @@ const Header = () => {
         setTime(Date().substring(16, 24))
     }, 1000);
     setInterval(() => {
-        setTime(`${Date().substring(0, 3)}, ${Date().substring(4, 7)} ${Date().substring(8, 10)}`)
+        setDay(`${Date().substring(0, 3)}, ${Date().substring(4, 7)} ${Date().substring(8, 10)}`);
     }, 86400000);
     return (
         <header className="header">

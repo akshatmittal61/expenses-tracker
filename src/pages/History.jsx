@@ -11,7 +11,7 @@ const History = ({ axiosInstance }) => {
             .then((res) => {
                 let f = 0;
                 setTransactions([...res.data]);
-                res.data.map(item => {
+                res.data.forEach(item => {
                     f += item.amount;
                     setBalance(f);
                 })

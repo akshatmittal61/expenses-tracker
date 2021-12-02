@@ -10,10 +10,11 @@ import Expenses from './pages/Expenses';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Add from './pages/Add';
 import Contact from './pages/Contact';
+require('dotenv').config();
 
 const App = () => {
     const axiosInstance = axios.create({
-        baseURL: `http://localhost:${process.env.PORT || 5000}`
+        baseURL: `http://localhost:${process.env.PORT||5000}`
     })
     return (
         <Router>

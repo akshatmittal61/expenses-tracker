@@ -24,3 +24,6 @@ yarn-error.log*
 
 # sass files
 public/sass
+
+# environment variables
+/.env

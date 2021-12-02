@@ -12,7 +12,7 @@ const Home = ({ axiosInstance }) => {
         await axiosInstance.get('/api/transactions')
             .then((res) => {
                 let f = 0;
-                res.data.map(item => {
+                res.data.forEach(item => {
                     f += item.amount;
                     setBalance(f);
                 })

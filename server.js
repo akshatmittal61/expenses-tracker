@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import fs from 'fs'
+import fs from 'fs';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 const __fileName = fileURLToPath(import.meta.url);
@@ -18,9 +18,6 @@ fs.readFile(path.join(__dirname, "transactions.json"), "utf8", (err, data) => {
     transactions = [...JSON.parse(data)];
 })
 
-/* app.get('/', (req, res) => {
-    res.json(transactions);
-}) */
 app.get('/api/transactions', (req, res) => {
     res.json(transactions);
 })

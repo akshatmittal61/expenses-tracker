@@ -11,7 +11,7 @@ const Savings = ({ axiosInstance }) => {
             .then((res) => {
                 let f = 0;
                 setTransactions([...res.data]);
-                res.data.map(item => {
+                res.data.forEach(item => {
                     if (item.amount >= 0) f += item.amount;
                     setBalance(f);
                 })

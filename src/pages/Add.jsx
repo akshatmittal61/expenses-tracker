@@ -9,7 +9,6 @@ const Add = ({ axiosInstance}) => {
     async function getTransactions() {
         await axiosInstance.get('/')
             .then((res) => {
-                let f = 0;
                 setTransactions([...res.data]);
             })
             .catch(err => console.log(err))
