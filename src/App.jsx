@@ -14,7 +14,7 @@ require('dotenv').config();
 
 const App = () => {
     const axiosInstance = axios.create({
-        baseURL: `http://localhost:${process.env.PORT||5000}`
+        baseURL: ``
     })
     return (
         <Router>
