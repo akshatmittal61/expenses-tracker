@@ -674,9 +674,16 @@ button {
       .add-form__group > * {
         margin: 0.5rem 0; }
       .add-form__group label {
-        font-size: 1.25rem; }
+        font-size: 1.25rem;
+        user-select: none;
+        cursor: pointer; }
     .add-form__input {
       width: 100%; }
+    .add-form__radio {
+      cursor: pointer;
+      margin: 0 0.25rem 0 1.5rem; }
+      .add-form__radio:active, .add-form__radio:focus {
+        outline-color: transparent; }
 
 .contact {
   width: 100%;
