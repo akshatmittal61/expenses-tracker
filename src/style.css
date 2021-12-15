@@ -475,7 +475,8 @@ button {
     align-items: center;
     padding: 2rem 1rem; }
   .home-content__head {
-    font-size: 3rem; }
+    font-size: 3rem;
+    white-space: nowrap; }
   .home-content__balance {
     font-size: 2rem; }
 
@@ -546,6 +547,11 @@ button {
     .expenses-details table {
       width: 80%;
       margin: 1.5rem 0; }
+      @media (max-width: 672px) {
+        .history-details table,
+        .savings-details table,
+        .expenses-details table {
+          width: 95%; } }
       .history-details table tr,
       .savings-details table tr,
       .expenses-details table tr {
@@ -563,17 +569,18 @@ button {
           justify-content: flex-start;
           align-items: center;
           font-size: 1.25rem;
-          padding: 0.75rem 1.25rem;
+          padding: 0.75rem 1rem;
           border: 2.5px solid var(--back-shadow); }
         .history-details table tr th,
         .savings-details table tr th,
         .expenses-details table tr th {
           font-size: 1.5rem;
-          padding: 1.25rem; }
+          padding: 1rem; }
         .history-details table tr td,
         .savings-details table tr td,
         .expenses-details table tr td {
-          justify-content: space-between; }
+          justify-content: space-between;
+          white-space: nowrap; }
           .history-details table tr td .material-icons,
           .savings-details table tr td .material-icons,
           .expenses-details table tr td .material-icons {
@@ -592,6 +599,16 @@ button {
             .expenses-details table tr td .material-icons:active,
             .expenses-details table tr td .material-icons:focus {
               background-color: var(--back-shadow); }
+            @media (max-width: 880px) {
+              .history-details table tr td .material-icons,
+              .savings-details table tr td .material-icons,
+              .expenses-details table tr td .material-icons {
+                opacity: 1; } }
+            @media (max-width: 672px) {
+              .history-details table tr td .material-icons,
+              .savings-details table tr td .material-icons,
+              .expenses-details table tr td .material-icons {
+                opacity: 1; } }
           .history-details table tr td:hover .material-icons,
           .savings-details table tr td:hover .material-icons,
           .expenses-details table tr td:hover .material-icons {
@@ -616,7 +633,9 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem; }
+    font-size: 1.25rem; }
+    .add-head h1 {
+      white-space: nowrap; }
   .add-form {
     width: 70%;
     display: flex;
@@ -628,13 +647,22 @@ button {
         width: 90%; } }
     .add-form__group {
       margin: 0.75rem 0;
-      width: 100%; }
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center; }
       .add-form__group > * {
         margin: 0.5rem 0; }
       .add-form__group label {
         font-size: 1.1rem;
         user-select: none;
         cursor: pointer; }
+      .add-form__group__radio {
+        flex-flow: row;
+        align-items: center; }
+        .add-form__group__radio label {
+          display: flex;
+          align-items: center; }
     .add-form__input {
       width: 100%; }
     .add-form__radio {
@@ -736,4 +764,5 @@ button {
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  font-size: 1.5rem; }

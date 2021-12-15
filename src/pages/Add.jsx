@@ -110,7 +110,7 @@ const Add = ({ axiosInstance }) => {
 							type="date"
 						/>
 					</div>
-					<div className="add-form__group">
+					<div className="add-form__group add-form__group__radio">
 						<label style={{ fontSize: "1rem" }}>
 							<input
 								className="add-form__radio"
