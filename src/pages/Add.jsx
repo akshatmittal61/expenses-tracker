@@ -1,28 +1,39 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
 const Add = ({ axiosInstance }) => {
 	const [transactions, setTransactions] = useState([]);
+	const currentDate = `${new Date().getFullYear()}-${
+		new Date().getMonth() < 9
+			? "0" + (new Date().getMonth() + 1)
+			: new Date().getMonth() + 1
+	}-${
+		new Date().getDate() < 10
+			? "0" + new Date().getDate()
+			: new Date().getDate()
+	}`;
 	useEffect(() => {
 		getTransactions();
 	});
 	async function getTransactions() {
 		await axiosInstance
-			.get("/")
+			.get("/api/transactions")
 			.then((res) => {
 				setTransactions([...res.data]);
-				console.log(res.data);
 			})
 			.catch((err) => console.log(err));
 	}
+	const navigate = useNavigate();
 	const [item, setItem] = useState({
 		title: "",
 		amount: 0,
+		date: currentDate,
 	});
 	const [isSaving, setIsSaving] = useState(true);
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		if (name === "title")
+		if (name !== "amount")
 			setItem({
 				...item,
 				[name]: value,
@@ -55,6 +66,7 @@ const Add = ({ axiosInstance }) => {
 			title: "",
 			amount: 0,
 		});
+		navigate("/history");
 	};
 	return (
 		<section className="add">
@@ -85,6 +97,18 @@ const Add = ({ axiosInstance }) => {
 							value={item.amount}
 							onChange={handleChange}
 							type="number"
+						/>
+					</div>
+					<div className="add-form__group">
+						<label htmlFor="date">Enter Date: </label>
+						<input
+							className="add-form__input"
+							placeholder="Enter date"
+							name="date"
+							required
+							value={item.date}
+							onChange={handleChange}
+							type="date"
 						/>
 					</div>
 					<div className="add-form__group">

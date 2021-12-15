@@ -51,7 +51,7 @@ npm i
 Run the project in development mode
 
 ```sh
-npm start
+npm run react
 ```
 
 Run the backend server in a new terminal window

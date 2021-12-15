@@ -544,7 +544,7 @@ button {
         .savings-details table tr td,
         .expenses-details table tr th,
         .expenses-details table tr td {
-          width: 50%;
+          width: 33%;
           display: flex;
           justify-content: flex-start;
           align-items: center;
@@ -613,12 +613,12 @@ button {
       .add-form {
         width: 90%; } }
     .add-form__group {
-      margin: 1.5rem 0;
+      margin: 0.75rem 0;
       width: 100%; }
       .add-form__group > * {
         margin: 0.5rem 0; }
       .add-form__group label {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         user-select: none;
         cursor: pointer; }
     .add-form__input {

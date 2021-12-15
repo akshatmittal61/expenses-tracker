@@ -43,6 +43,7 @@ const Savings = ({ axiosInstance }) => {
 						<tr>
 							<th>Title</th>
 							<th>Amount</th>
+							<th>Date</th>
 						</tr>
 						{transactions.map(
 							(item, index) =>
@@ -58,6 +59,9 @@ const Savings = ({ axiosInstance }) => {
 											}}
 										>
 											{item.amount}
+										</td>
+										<td style={{ fontSize: "1rem" }}>
+											{item.date}
 											<span
 												className="material-icons"
 												onClick={() =>
