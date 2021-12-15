@@ -512,12 +512,26 @@ button {
     .savings-head__h1,
     .expenses-head__h1 {
       font-size: 2.5rem;
-      line-height: 3rem; }
+      line-height: 3rem;
+      display: flex; }
+      .history-head__h1 span,
+      .savings-head__h1 span,
+      .expenses-head__h1 span {
+        margin: 0 0.5rem; }
     .history-head__h3,
     .savings-head__h3,
     .expenses-head__h3 {
       font-size: 1.25rem;
       line-height: 1.5rem; }
+    .history-head__filter,
+    .savings-head__filter,
+    .expenses-head__filter {
+      display: flex;
+      align-items: center; }
+      .history-head__filter form,
+      .savings-head__filter form,
+      .expenses-head__filter form {
+        display: flex; }
   .history-details,
   .savings-details,
   .expenses-details {

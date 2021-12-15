@@ -1,6 +1,15 @@
 import React from "react";
 
-const Button = ({ className, text, variant, size, color, onClick, type }) => {
+const Button = ({
+	className,
+	text,
+	variant,
+	size,
+	color,
+	onClick,
+	type,
+	style,
+}) => {
 	let classes = "btn";
 	if (variant === "fill" || variant === "outline") {
 		classes += ` btn-${variant}`;
@@ -37,6 +46,7 @@ const Button = ({ className, text, variant, size, color, onClick, type }) => {
 			className={classes + ` ${className}`}
 			onClick={onClick}
 			type={type}
+			style={style}
 		>
 			{text}
 		</button>

@@ -46,7 +46,6 @@ const Add = ({ axiosInstance }) => {
 	};
 	const handleType = (e) => {
 		const { name, value } = e.target;
-		console.log(name, value);
 		if (value === "S") setIsSaving(true);
 		else setIsSaving(false);
 	};
