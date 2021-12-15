@@ -146,8 +146,6 @@ body,
 a {
   text-decoration: none;
   color: var(--tcolor);
-  border: none;
-  outline: none;
   cursor: pointer;
   user-select: none; }
   a:hover, a:active, a:focus, a:visited {
@@ -187,12 +185,6 @@ input {
   text-rendering: auto;
   background-color: var(--bgcolor);
   color: var(--tcolor);
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: normal;
-  text-transform: inherit;
-  text-indent: inherit;
-  text-shadow: inherit;
   display: inline-block;
   text-align: start;
   appearance: auto;
@@ -203,7 +195,6 @@ input {
     outline: none; }
 
 input {
-  border: none;
   outline: 3px solid transparent;
   border-radius: 4px;
   background-color: var(--bgcolor-400);
@@ -220,20 +211,10 @@ input {
     font-size: 0.875rem; }
 
 button {
-  background: inherit;
+  background: none;
   color: inherit;
-  border: none;
-  outline: none;
-  font: inherit;
-  text-decoration: inherit;
-  text-transform: inherit;
-  text-shadow: inherit;
-  text-rendering: inherit;
-  text-size-adjust: inherit;
-  text-indent: inherit;
-  text-align: inherit;
-  appearance: inherit; }
-  button:hover, button:active, button:focus, button:focus-visible, button:focus-within {
+  font: inherit; }
+  button, button:hover, button:active, button:focus, button:focus-visible, button:focus-within {
     border: none;
     outline: none; }
 
@@ -353,51 +334,14 @@ button {
   width: 3.5rem;
   overflow: visible;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-  transition: background-color 0.3s cubic-bezier(0.4, 0, 1, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 1, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
-  .fab .material-icons {
-    transition: all 500ms ease; }
+  transition: all var(--transition-time) ease-in-out; }
   .fab:hover {
     background-color: var(--primary-100);
     color: #082038; }
-    .fab:hover .material-icons {
-      transform: rotateZ(360deg); }
   .fab:active, .fab:focus {
     outline: none;
     background-color: var(--primary-700);
     color: #f0f0f0; }
-
-.card {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .card-frame {
-    min-height: 90%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.25rem;
-    padding: 0.5rem 0.25rem;
-    border-radius: 10px;
-    overflow: hidden;
-    background: linear-gradient(90deg, var(--green) 4%, var(--blue) 0%) top/100% 34% no-repeat, linear-gradient(90deg, var(--yellow) 50%, var(--blue) 0%) top/100% 82% no-repeat, linear-gradient(90deg, var(--yellow) 10%, var(--red) 0%) top/100% 100%;
-    box-shadow: 0 10px 15px rgba(60, 64, 67, 0.3); }
-    @media (max-width: 672px) {
-      .card-frame {
-        padding: 0.25rem; } }
-  .card-box {
-    position: relative;
-    height: 99%;
-    width: 99%;
-    padding: 0;
-    border-radius: 10px;
-    background-color: var(--bgcolor-100);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    transition: all var(--transition-time) ease-in-out; }
 
 .header {
   width: 100%;

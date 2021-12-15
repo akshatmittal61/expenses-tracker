@@ -27,7 +27,6 @@ Expenses Tracker is web application built with MERN stack technologies to track 
 
 -   **Contact the developer** - To contact the developer, go to the contact us page and connect with them at different social platforms.
 
-- **Note:**  - To add an expense, use - (negative) sign before entering the amount.
 
 # Development
 
@@ -70,6 +69,8 @@ npm i nodemon -g
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+- **Note**: Don't forget to add [http://localhost:5000](http://localhost:5000) to axiosInstance baseUrl in App.jsx for local development
 
 # Author
 

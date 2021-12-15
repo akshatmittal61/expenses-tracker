@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Fab = ({ onClick, icon }) => {
-    return (
-        <button className="btn fab" onClick={onClick}>
-            <span className="material-icons">
-                {icon}
-            </span>
-        </button>
-    )
-}
+	return (
+		<button className="btn fab" onClick={onClick}>
+			<span className="material-icons">{icon}</span>
+		</button>
+	);
+};
 
-export default Fab
+export default Fab;
