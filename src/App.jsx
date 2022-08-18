@@ -9,7 +9,7 @@ import Savings from "./pages/Savings";
 import Expenses from "./pages/Expenses";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Add from "./pages/Add";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact/Contact";
 require("dotenv").config();
 
 const App = () => {

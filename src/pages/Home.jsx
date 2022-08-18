@@ -7,6 +7,7 @@ const Home = ({ axiosInstance }) => {
 	const [balance, setBalance] = useState(0);
 	useEffect(() => {
 		getTransactions();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	async function getTransactions() {
 		await axiosInstance
