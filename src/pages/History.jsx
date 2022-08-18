@@ -6,6 +6,7 @@ const History = ({ axiosInstance }) => {
 	const [transactions, setTransactions] = useState([]);
 	useEffect(() => {
 		getTransactions();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	async function getTransactions() {
 		await axiosInstance
